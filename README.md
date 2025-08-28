@@ -5,6 +5,10 @@
 
 
 npm i
+
 npm run dev
+
+`For Ui View`
+[https://react-historical-places-htz.vercel.app/]
 
 
