@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --default-font-family: "Montserrat", sans-serif;
+  --default-font-weight: 400;
+  --black: #000;
+  --grey: #6e6e6e;
+  --light-grey: #ddd;
+  --red: #ff0000;
+  --green: #75c100;
+  --container-md-px: 8.15%;
+  --container-sm-px: 10%;
+
+  --min-vw: 640;
+  --max-vw: 1920;
+
+  --min-vw-px: calc(var(--min-vw) * 1px);
+  --max-vw-px: calc(var(--max-vw) * 1px);
+
+  --text-h1: 36;
+  --text-h2: 22;
+  --text-h3: 18;
+  --text-base: 16;
+
+  --text-h1-min: 28;
+  --text-h2-min: 18;
+  --text-h3-min: 16;
+  --text-base-min: 14;
+
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;
+}
+.mb-5 {
+  margin-bottom: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: var(--default-font-family);
+  font-weight: var(--default-font-weight);
+  color: var(--black);
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 280px
+}
+
+.container {
+  max-width: 1920px;
+  width: 100%;
+  padding-inline: 20px;
+  margin-inline: auto;
+}
+
+#root {
+  width: 100%;
+  padding-block: 60px;
+}
+
+.text-black {
+  color: var(--black);
+}
+
+.text-grey {
+  color: var(--grey);
+}
+
+.text-right {
+  text-align: right;
+}
+
+.button {
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.button-info {
+  background-color: blue;
+  color: white;
+}
+
+.button:hover {
+    outline: none;
+    border-color: transparent;
+}
+
+.button:focus, .button:focus-visible {
+    outline: none;
+    box-shadow: inset 1px -1px 12px var(--light-grey);
+}
+
+@media (min-width: 780px) {
+  .container-md {
+    padding-inline: var(--container-md-px);
+  }
+  .container-sm {
+    padding-inline: var(--container-sm-px);
+  }
+}
+
+.heading1 {
+  --max-fs: var(--text-h1);
+  --min-fs: var(--text-h1-min);
+
+  --slope: calc((var(--max-fs) - var(--min-fs)) / (var(--max-vw) - var(--min-vw)));
+
+  --min-fs-px: calc(var(--min-fs) * 1px);
+  --max-fs-px: calc(var(--max-fs) * 1px);
+  --fs-px: calc(var(--slope) * (100vw - var(--min-vw-px)) + var(--min-fs-px));
+
+  font-size: clamp(var(--min-fs-px), var(--fs-px), var(--max-fs-px));
+  line-height: 120%;
+}
+
+.text-base {
+  --max-fs: var(--text-base);
+  --min-fs: var(--text-base-min);
+
+  --slope: calc((var(--max-fs) - var(--min-fs)) / (var(--max-vw) - var(--min-vw)));
+
+  --min-fs-px: calc(var(--min-fs) * 1px);
+  --max-fs-px: calc(var(--max-fs) * 1px);
+  --fs-px: calc(var(--slope) * (100vw - var(--min-vw-px)) + var(--min-fs-px));
+
+  font-size: clamp(var(--min-fs-px), var(--fs-px), var(--max-fs-px));
+  line-height: 120%;
+}
+
+.text-center {
+  text-align: center;
+}
